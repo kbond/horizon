@@ -177,7 +177,7 @@
                         </small>
                     </td>
                     <td class="table-fit">
-                        {{ readableTimestamp(job.payload.pushedAt) }}
+                        {{ localTime(job.payload.pushedAt) }}
                     </td>
 
                     <td class="table-fit">

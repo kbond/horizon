@@ -50,7 +50,10 @@ export default {
          * Format the given date with respect to timezone.
          */
         formatDate(unixTime) {
-            return moment(unixTime * 1000).add(new Date().getTimezoneOffset() / 60);
+            return moment(unixTime * 1000)
+                .add(new Date().getTimezoneOffset() / 60)
+                .utc()
+                .local();
         },
 
         /**
@@ -78,13 +81,6 @@ export default {
         },
 
         /**
-         * Convert to human readable timestamp.
-         */
-        readableTimestamp(timestamp) {
-            return this.formatDate(timestamp).format('YYYY-MM-DD HH:mm:ss');
-        },
-
-        /**
          * Format the tags.
          */
         displayableTagsList(tags, truncate = true) {
@@ -103,10 +99,7 @@ export default {
          * Show the time in local time.
          */
         localTime(time) {
-            return moment(time + ' Z')
-                .utc()
-                .local()
-                .format('MMMM Do YYYY, h:mm:ss A');
+            return this.formatDate(time).format('MMMM Do YYYY, h:mm:ss A');
         },
 
         /**

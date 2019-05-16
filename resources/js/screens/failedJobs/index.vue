@@ -233,7 +233,7 @@
                     </td>
 
                     <td class="table-fit">
-                        {{ readableTimestamp(job.failed_at) }}
+                        {{ localTime(job.failed_at) }}
                     </td>
 
                     <td class="text-right table-fit">

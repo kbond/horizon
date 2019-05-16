@@ -151,7 +151,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-2"><strong>Failed At</strong></div>
-                    <div class="col">{{readableTimestamp(job.failed_at)}}</div>
+                    <div class="col">{{localTime(job.failed_at)}}</div>
                 </div>
             </div>
         </div>
@@ -217,7 +217,7 @@
                     </td>
 
                     <td class="text-right table-fit">
-                        {{readableTimestamp(retry.retried_at)}}
+                        {{localTime(retry.retried_at)}}
                     </td>
                 </tr>
                 </tbody>

@@ -179,7 +179,7 @@
                     </small>
                 </td>
                 <td class="table-fit">
-                    {{ readableTimestamp(job.payload.pushedAt) }}
+                    {{ localTime(job.payload.pushedAt) }}
                 </td>
 
                 <td class="table-fit" v-if="type == 'jobs'">
@@ -201,7 +201,7 @@
                 </td>
 
                 <td class="text-right table-fit" v-if="type == 'failed'">
-                    {{ readableTimestamp(job.failed_at) }}
+                    {{ localTime(job.failed_at) }}
                 </td>
             </tr>
             </tbody>
